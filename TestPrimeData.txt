@@ -1,0 +1,81 @@
+Q.1:
+SELECT MAX(Athleted) 
+FROM Performence 
+WHERE Athleted < MAX(Atheleted)
+
+Q.2:
+SELECT * 
+FROM Customers 
+LEFT JOIN Orders 
+ON Customers.id=Orders.customerid
+
+Q.3:
+SELECT *
+FROM Department INNER JOIN Department.id=Employee.departmentId
+WHERE Department.name=[...]
+ORDER BY salary 
+LIMIT 3
+
+Q.4:
+#arr = [1,...,n]
+arr = [1,2,3,4,6,7,8,9]
+missing_numbers = []
+for i in range(1, n+1):
+    if i not in arr:
+        missing_numbers.append(i)
+print(missing_numbers)
+
+Q.5:
+a = [1,3]
+b = [1,2,10]
+
+//Merged
+for i in b:
+  a.append(i)
+  print(a)
+
+//Sort
+def bubble_sort(arr):
+    def swap(i, j):
+        arr[i], arr[j] = arr[j], arr[i]
+    n = len(arr)
+    swapped = True
+    
+    x = -1
+    while swapped:
+        swapped = False
+        x = x + 1
+        for i in range(1, n-x):
+            if arr[i - 1] > arr[i]:
+                swap(i - 1, i)
+                swapped = True         
+    return arr
+
+sorted_arr = bubble_sort(a)
+print(sorted_arr)
+
+//Final
+def median(arr):
+  leng = len(sorted_arr)
+  temp =  int(len(sorted_arr)/2)
+  if leng % 2 == 0: 
+    return (arr[temp]+arr[temp-1])/2
+  else:
+    return arr[temp]
+median(sorted_arr)
+
+Q.6:
+arr = [1,1,3,4,4,5,6,6,7]
+final_arr = []
+for i in arr:
+  if i not in final_arr:
+    final_arr.append(i)
+
+Q.7:
+- Build an index to measure the importance that websites bring based on many criteria.
+- The system will automatically evaluate and filter (if unsatisfactory scores will be disqualified) websites after a fixed period.
+- The disqualified sites will be listed together with the unrated lists and re-evaluated later.
+- When full 900 websites, it will automatically filter about 10 lowest score websites and continue to evaluate.
+
+Q.8:
+- The report needs multiple criteria and each criterion will fit a chart type. For example, the score distribution will use a column chart, the score classification will use a pie chart because they are easy to understand and compare for the viewer.
